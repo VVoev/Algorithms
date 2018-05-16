@@ -30,7 +30,47 @@ class LinkedList {
 
         return counter;
     }
+
+    getFirst() {
+        return this.head;
+    }
+
+    getLast() {
+        let counter = 0;
+        let node = this.head;
+
+        if (!this.head) {
+            return null;
+        }
+
+        while (node) {
+            counter++;
+            if (!node.next) {
+                return node;
+            }
+            node = node.next;
+        }
+    }
+
+    clear() {
+        this.head = null;
+    }
+
+    removeFirst() {
+        if (!this.head) {
+            return;
+        }
+        this.head = this.head.next;
+
+    }
+
+
 }
+
+const l = new LinkedList();
+l.insertFirst('a');
+l.removeFirst();
+
 
 
 module.exports = { Node, LinkedList };
