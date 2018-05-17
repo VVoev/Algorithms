@@ -11,12 +11,29 @@ class Node {
 class LinkedList {
     constructor() {
         this.head = null;
-        this.counter2 = 0;
     }
 
 
     insertFirst(data) {
         this.head = new Node(data, this.head);
+    }
+
+    forEach(fn) {
+        let counter = 0;
+        let node = this.head;
+        while (node) {
+            fn(node, counter);
+            node = node.next;
+            counter++
+        }
+    }
+
+    *[Symbol.iterator]() {
+        let node = this.head;
+        while (node) {
+            yield node;
+            node = node.next;
+        }
     }
 
     size() {
@@ -142,14 +159,5 @@ class LinkedList {
 
 
 }
-
-const l = new LinkedList();
-l.insertLast(1);
-l.insertLast(2);
-l.insertLast(3);
-l.insertLast(4);
-l.removeAt(3);
-
-
 
 module.exports = { Node, LinkedList };
