@@ -20,7 +20,6 @@ function levelWidth(root) {
 
     while (arr.length > 1) {
         const node = arr.shift();
-
         if (node === 's') {
             counterArr.push(0);
             arr.push('s');
