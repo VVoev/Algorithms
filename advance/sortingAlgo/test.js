@@ -3,6 +3,8 @@ const bubbleSort = S.bubbleSort;
 const selectionSort = S.selectionSort;
 const mergeSort = S.mergeSort;
 const merge = S.merge;
+const insertionSort = S.insertionSort;
+
 
 function getArray() {
     return [100, -40, 500, -124, 0, 21, 7];
@@ -23,6 +25,12 @@ describe('Selection sort', () => {
         expect(selectionSort(getArray())).toEqual(getSortedArray());
     });
 });
+
+describe('Insertion sort', () => {
+    test('sort an array', () => {
+        expect(insertionSort(getArray())).toEqual(getSortedArray());
+    })
+})
 
 describe('Merge sort', () => {
     test('merge function can join together two sorted arrays', () => {
