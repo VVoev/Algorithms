@@ -4,6 +4,7 @@ const selectionSort = S.selectionSort;
 const mergeSort = S.mergeSort;
 const merge = S.merge;
 const insertionSort = S.insertionSort;
+const quickSort = S.quickSort;
 
 
 function getArray() {
@@ -29,6 +30,12 @@ describe('Selection sort', () => {
 describe('Insertion sort', () => {
     test('sort an array', () => {
         expect(insertionSort(getArray())).toEqual(getSortedArray());
+    })
+})
+
+describe('quick sort', () => {
+    test('sort an array', () => {
+        expect(quickSort(getArray())).toEqual(getSortedArray());
     })
 })
 

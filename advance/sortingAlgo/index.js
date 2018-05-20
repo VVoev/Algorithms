@@ -1,6 +1,3 @@
-// --- Directions
-// Implement bubbleSort, selectionSort, and mergeSort
-
 function bubbleSort(arr) {
     for (let i = 0; i < arr.length; i++) {
         for (let j = 0; j < arr.length - i - 1; j++) {
@@ -13,7 +10,6 @@ function bubbleSort(arr) {
     }
     return arr;
 }
-
 
 function selectionSort(arr) {
     for (let i = 0; i < arr.length - 1; i++) {
@@ -67,10 +63,77 @@ function insertionSort(arr) {
     return arr;
 }
 
-let arr = [5, 9, 13, 4, 1, 6];
-let sorted = insertionSort(arr);
+function quickSort(arr, left, right) {
+
+    var index;
+
+    if (arr.length > 1) {
+
+        left = typeof left != "number" ? 0 : left;
+        right = typeof right != "number" ? arr.length - 1 : right;
+
+        index = partition(arr, left, right);
+
+        if (left < index - 1) {
+            quickSort(arr, left, index - 1);
+        }
+
+        if (index < right) {
+            quickSort(arr, index, right);
+        }
+
+    }
+
+    return arr;
+}
 
 
 
 
-module.exports = { bubbleSort, selectionSort, mergeSort, merge, insertionSort };
+function partition(arr, left, right) {
+
+    var pivot = arr[Math.floor((right + left) / 2)],
+        i = left,
+        j = right;
+
+
+    while (i <= j) {
+
+        while (arr[i] < pivot) {
+            i++;
+        }
+
+        while (arr[j] > pivot) {
+            j--;
+        }
+
+        if (i <= j) {
+            swap(arr, i, j);
+            i++;
+            j--;
+        }
+    }
+
+    return i;
+}
+
+function swap(arr, firstIndex, secondIndex) {
+    var temp = arr[firstIndex];
+    arr[firstIndex] = arr[secondIndex];
+    arr[secondIndex] = temp;
+}
+
+
+//TESTING ONLY
+// const arr = [];
+// for (let index = 0; index < 100000; index++) {
+//     index % 2 === 0 ? arr.push(index + 31) : arr.push(index - 25);
+// }
+
+// let sorted = quickSort(arr);
+// console.log(sorted);
+
+
+
+
+module.exports = { bubbleSort, selectionSort, mergeSort, merge, insertionSort, quickSort };
