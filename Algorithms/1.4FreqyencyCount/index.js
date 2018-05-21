@@ -15,15 +15,36 @@
                                         O(n)
 
 
-        add(a,b,n)
+        Add(a,b,n)
         {
-            for(i=0;i<n;i++)
+            for(i=0;i<n;i++)            >n
             {
-                for(j=0;j<n;j++)
+                for(j=0;j<n;j++)        >n
                 {
-                    c[i,j] = a[i,j] + b[i,j];
+                    c[i,j] = a[i,j] + b[i,j];   n*n
+                }                               2n2
+                                                O(n2)
+                                                s(n) => 3n2 + 3
+            }                                   O(n2)
+        }
+
+
+        Multiply(a,b,n)
+        {
+            for()             n+1
+            {
+                for()             n+1
+                {
+                    n*n
+                    for()             n+1
+                    {
+                        n*n*n
+                    }
                 }
             }
         }
+
+        O(n3);
+        O(n2);
 
 */
