@@ -162,13 +162,13 @@ class LinkedList {
         var prev = null;
 
         while (curr) {
-            next = curr.next;
+            next = curr.next; //2 3 null
 
-            curr.next = prev;
+            curr.next = prev; //null 1 2
 
-            prev = curr;
+            prev = curr; //1 2 3
 
-            curr = next;
+            curr = next; //2
         }
         this.head = prev;
     }
