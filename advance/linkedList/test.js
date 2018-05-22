@@ -292,6 +292,25 @@ describe('ForEach', () => {
     });
 });
 
+describe('reverse method should reverse linked list', () => {
+    test('reverse list', () => {
+        const l = new List();
+
+        l.insertFirst(1);
+        l.insertFirst(2);
+        l.insertFirst(3);
+        l.insertFirst(4);
+        l.insertFirst(5);
+        l.insertFirst(6);
+        expect(l.getAt(0).data).toEqual(6);
+        expect(l.getAt(1).data).toEqual(5);
+        expect(l.getAt(2).data).toEqual(4);
+        expect(l.getAt(3).data).toEqual(3);
+        expect(l.getAt(4).data).toEqual(2);
+        expect(l.getAt(5).data).toEqual(1);
+    })
+})
+
 describe('for...of loops', () => {
     test('works with the linked list', () => {
         const l = new List();

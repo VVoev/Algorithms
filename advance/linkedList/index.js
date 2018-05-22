@@ -13,7 +13,6 @@ class LinkedList {
         this.head = null;
     }
 
-
     insertFirst(data) {
         this.head = new Node(data, this.head);
     }
@@ -157,7 +156,33 @@ class LinkedList {
         prevNode.next = node;
     }
 
+    reverse() {
+        var curr = this.head;
+        var next = null;
+        var prev = null;
+
+        while (curr) {
+            next = curr.next;
+
+            curr.next = prev;
+
+            prev = curr;
+
+            curr = next;
+        }
+        this.head = prev;
+    }
+
 
 }
+
+const l = new LinkedList();
+
+l.insertLast(1);
+l.insertLast(2);
+l.insertLast(3);
+
+l.reverse();
+console.log(l);
 
 module.exports = { Node, LinkedList };
